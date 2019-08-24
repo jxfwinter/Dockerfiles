@@ -12,12 +12,16 @@ rm -f /lib/systemd/system/anaconda.target.wants/*;\
 yum -y install openssl openssh-server yum-utils;\
 yum -y install epel-release centos-release-scl;\
 yum -y install https://download.postgresql.org/pub/repos/yum/reporpms/EL-7-x86_64/pgdg-redhat-repo-latest.noarch.rpm;\
-yum -y install make automake autoconf scl-utils devtoolset-8-gcc-c++ devtoolset-8-gdb postgresql11-devel postgresql11 openssl-devel zlib-devel python-devel mlocate diffutils patch vim iproute net-tools  bzip2 cifs-utils cmake;\
+yum -y install kde-l10n-Chinese glibc-common make automake autoconf scl-utils devtoolset-8-gcc-c++ devtoolset-8-gdb postgresql11-devel postgresql11 openssl-devel zlib-devel python-devel mlocate diffutils patch vim iproute net-tools  bzip2 cifs-utils cmake;\
+yum -y reinstall glibc-common;\
 yum clean all;\
+localedef -c -f UTF-8 -i zh_CN zh_CN.utf8;\
 echo 'rt20dev88' | passwd --stdin root;\
 ssh-keygen -A;\
 sed -i -r 's/^(.*pam_nologin.so)/#\1/' /etc/pam.d/sshd;\
 systemctl enable sshd.service;
+
+ENV LC_ALL zh_CN.utf8
 
 #是否默认启用devtoolset-8
 RUN echo 'source scl_source enable devtoolset-8' >> ~/.bashrc
