@@ -24,8 +24,8 @@ echo "export LANG=zh_CN.UTF-8" >> /etc/profile;\
 echo 'rt20dev88' | passwd --stdin root;\
 ssh-keygen -A;\
 sed -i -r 's/^(.*pam_nologin.so)/#\1/' /etc/pam.d/sshd;\
-systemctl enable sshd.service;
-systemctl enable nginx.service;
+systemctl enable sshd.service;\
+systemctl enable nginx.service;\
 systemctl enable postgresql11.service;
 
 ENV LANG zh_CN.UTF-8
