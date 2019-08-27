@@ -26,6 +26,7 @@ ssh-keygen -A;\
 sed -i -r 's/^(.*pam_nologin.so)/#\1/' /etc/pam.d/sshd;\
 systemctl enable sshd.service;
 systemctl enable nginx.service;
+systemctl enable postgresql11.service;
 
 ENV LANG zh_CN.UTF-8
 ENV LC_ALL zh_CN.UTF-8
