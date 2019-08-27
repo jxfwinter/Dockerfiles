@@ -12,7 +12,7 @@ rm -f /lib/systemd/system/basic.target.wants/*;\
 rm -f /lib/systemd/system/anaconda.target.wants/*;\
 yum -y install openssl openssh-server yum-utils;\
 yum -y install centos-release-scl;\
-yum -y install kde-l10n-Chinese make automake autoconf gcc-c++ gdb scl-utils devtoolset-8-gcc-c++ devtoolset-8-gdb postgresql-devel openssl-devel zlib-devel python-devel mlocate patch vim iproute net-tools  bzip2 cifs-utils cmake;\
+yum -y install kde-l10n-Chinese make automake autoconf gcc-c++ gdb scl-utils devtoolset-8-gcc-c++ devtoolset-8-gdb postgresql-devel openssl-devel libcurl-devel zlib-devel python-devel mlocate patch vim iproute net-tools  bzip2 cifs-utils cmake;\
 yum -y reinstall glibc-common;\
 yum clean all;\
 localedef -c -f UTF-8 -i zh_CN zh_CN.utf8;\
