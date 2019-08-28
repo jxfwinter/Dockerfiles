@@ -14,7 +14,7 @@ yum -y install openssl openssh-clients openssh-server yum-utils;\
 yum -y install centos-release-scl epel-release;\
 yum -y install https://download.postgresql.org/pub/repos/yum/reporpms/EL-7-x86_64/pgdg-redhat-repo-latest.noarch.rpm;\
 yum install -y postgresql11 postgresql11-server;\
-yum -y install nginx sshpass kde-l10n-Chinese screen scl-utils devtoolset-8-gdb patch vim iproute net-tools  bzip2;\
+yum -y install cronie crontabs nginx sshpass kde-l10n-Chinese screen scl-utils devtoolset-8-gdb patch vim iproute net-tools  bzip2;\
 yum -y reinstall glibc-common;\
 yum clean all;\
 localedef -c -f UTF-8 -i zh_CN zh_CN.utf8;\
