@@ -1,6 +1,6 @@
 FROM ubuntu:19.04
 
-RUN apt-get install -y openssh-server
+RUN apt-get update && apt-get install -y openssh-server
 
 RUN echo 'rt20dev88' | chpasswd
 
