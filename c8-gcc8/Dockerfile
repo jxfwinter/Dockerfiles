@@ -18,7 +18,7 @@ RUN dnf -y install gcc-c++ gdb make automake autoconf cmake
 RUN dnf -y install postgresql12-devel postgresql12 python2 python2-devel
 RUN dnf -y install openssl-devel libcurl-devel zlib-devel
 RUN dnf -y install mlocate patch vim iproute net-tools  bzip2 cifs-utils passwd
-RUN dnf -y install glibc-locale-source glibc-langpack-cn
+RUN dnf -y install glibc-locale-source glibc-langpack-zh
 RUN dnf clean all
 RUN localedef -c -f UTF-8 -i zh_CN zh_CN.utf8;\
 export LANG=zh_CN.UTF-8;\
