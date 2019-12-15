@@ -16,7 +16,7 @@ centos8系统,包含默认的gcc8 gdb8版本，详细可查看Dockerfile文件
 u1904-dev目录：  
 ubuntu1904系统,包含默认的gcc版本，详细可查看Dockerfile文件  
   
-启动容器命令：
+启动容器命令：  
 docker pull jxfwinter/dev-env:c7-gcc48  
 docker run --restart always -d --name c7-dev-g48 --cap-add SYS_ADMIN --cap-add DAC_READ_SEARCH -v /etc/localtime:/etc/localtime:ro -v /sys/fs/cgroup:/sys/fs/cgroup:ro -p 2200:22 jxfwinter/dev-env:c7-gcc48  
 
