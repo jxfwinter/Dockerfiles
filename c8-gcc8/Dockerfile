@@ -20,6 +20,16 @@ RUN dnf -y install openssl-devel libcurl-devel zlib-devel
 RUN dnf -y install mlocate patch vim iproute net-tools  bzip2 cifs-utils passwd
 RUN dnf -y install glibc-locale-source glibc-langpack-zh
 RUN dnf clean all
+
+RUN curl -L -OJ https://github.com/ninja-build/ninja/releases/download/v1.9.0/ninja-linux.zip
+RUN curl  -L -OJ https://chrome-infra-packages.appspot.com/dl/gn/gn/linux-amd64/+/latest
+RUN unzip ninja-linux.zip
+RUN unzip gn-linux-amd64.zip
+RUN mv ninja /usr/local/bin/
+RUN mv gn /usr/local/bin/
+RUN rm -rf ninja-linux.zip
+RUN rm -rf gn-linux-amd64.zip
+
 RUN localedef -c -f UTF-8 -i zh_CN zh_CN.utf8;\
 export LANG=zh_CN.UTF-8;\
 echo 'LANG="zh_CN.UTF-8"' > /etc/locale.conf;\
