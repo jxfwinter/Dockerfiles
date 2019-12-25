@@ -18,19 +18,19 @@ RUN dnf -y install mlocate patch vim iproute net-tools bzip2 passwd postgresql12
 RUN dnf -y install glibc-locale-source glibc-langpack-zh
 RUN dnf -y install openssl-devel libcurl-devel zlib-devel
 
-RUN dnf -y install git gcc-c++ gdb make automake autoconf cmake cifs-utils
-RUN dnf -y install python2-devel
+#RUN dnf -y install git gcc-c++ gdb make automake autoconf cmake cifs-utils
+#RUN dnf -y install python2-devel
 
 RUN dnf clean all
 
-RUN curl -L -OJ https://github.com/ninja-build/ninja/releases/download/v1.9.0/ninja-linux.zip
-RUN curl  -L -OJ https://chrome-infra-packages.appspot.com/dl/gn/gn/linux-amd64/+/latest
-RUN unzip ninja-linux.zip
-RUN unzip gn-linux-amd64.zip
-RUN mv ninja /usr/local/bin/
-RUN mv gn /usr/local/bin/
-RUN rm -rf ninja-linux.zip
-RUN rm -rf gn-linux-amd64.zip
+#RUN curl -L -OJ https://github.com/ninja-build/ninja/releases/download/v1.9.0/ninja-linux.zip
+#RUN curl  -L -OJ https://chrome-infra-packages.appspot.com/dl/gn/gn/linux-amd64/+/latest
+#RUN unzip ninja-linux.zip
+#RUN unzip gn-linux-amd64.zip
+#RUN mv ninja /usr/local/bin/
+#RUN mv gn /usr/local/bin/
+#RUN rm -rf ninja-linux.zip
+#RUN rm -rf gn-linux-amd64.zip
 
 RUN sed -i "/mv -i/a\alias ls='ls --color'" /root/.bashrc
 RUN localedef -c -f UTF-8 -i zh_CN zh_CN.utf8;\

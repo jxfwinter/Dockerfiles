@@ -13,7 +13,7 @@ rm -f /lib/systemd/system/anaconda.target.wants/*;
 
 RUN yum -y install openssl openssh-server yum-utils
 RUN yum -y install centos-release-scl
-RUN yum -y install unzip kde-l10n-Chinese make automake autoconf openssl-devel libcurl-devel zlib-devel python-devel mlocate patch vim iproute net-tools bzip2 cifs-utils cmake
+RUN yum -y install git unzip kde-l10n-Chinese make automake autoconf openssl-devel libcurl-devel zlib-devel python-devel mlocate patch vim iproute net-tools bzip2 cifs-utils cmake
 RUN yum -y install https://download.postgresql.org/pub/repos/yum/reporpms/EL-7-x86_64/pgdg-redhat-repo-latest.noarch.rpm
 RUN yum -y install scl-utils devtoolset-8-gcc-c++ devtoolset-8-gdb 
 RUN yum -y install gcc-c++ gdb postgresql-devel
