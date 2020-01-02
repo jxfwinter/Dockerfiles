@@ -18,6 +18,10 @@ RUN yum -y install https://download.postgresql.org/pub/repos/yum/reporpms/EL-7-x
 RUN yum -y install scl-utils devtoolset-8-gcc-c++ devtoolset-8-gdb 
 RUN yum -y install gcc-c++ gdb postgresql-devel
 RUN yum -y reinstall glibc-common
+
+RUN yum-config-manager --add-repo http://www.nasm.us/nasm.repo
+RUN yum -y install nasm
+
 RUN yum clean all
 RUN localedef -c -f UTF-8 -i zh_CN zh_CN.utf8
 RUN export LANG=zh_CN.UTF-8

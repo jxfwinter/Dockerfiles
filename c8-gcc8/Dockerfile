@@ -22,7 +22,7 @@ RUN dnf -y install git gcc-c++ gdb make automake autoconf cmake cifs-utils diffu
 RUN dnf -y install python2-devel
 
 RUN yum-config-manager --add-repo http://www.nasm.us/nasm.repo
-RUN dnf install nasm
+RUN dnf -y install nasm
 
 RUN dnf clean all
 
