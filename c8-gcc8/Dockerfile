@@ -21,6 +21,9 @@ RUN dnf -y install openssl-devel libcurl-devel zlib-devel
 RUN dnf -y install git gcc-c++ gdb make automake autoconf cmake cifs-utils
 RUN dnf -y install python2-devel
 
+RUN yum-config-manager --add-repo http://www.nasm.us/nasm.repo
+RUN dnf install nasm
+
 RUN dnf clean all
 
 RUN curl -L -OJ https://github.com/ninja-build/ninja/releases/download/v1.9.0/ninja-linux.zip
