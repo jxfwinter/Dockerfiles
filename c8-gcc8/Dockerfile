@@ -18,7 +18,7 @@ RUN dnf -y install mlocate patch vim iproute net-tools bzip2 passwd postgresql12
 RUN dnf -y install glibc-locale-source glibc-langpack-zh
 RUN dnf -y install openssl-devel libcurl-devel zlib-devel
 
-RUN dnf -y install git gcc-c++ gdb make automake autoconf cmake cifs-utils
+RUN dnf -y install git gcc-c++ gdb make automake autoconf cmake cifs-utils diffutils
 RUN dnf -y install python2-devel
 
 RUN yum-config-manager --add-repo http://www.nasm.us/nasm.repo
