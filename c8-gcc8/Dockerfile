@@ -16,7 +16,7 @@ RUN dnf -y install https://download.postgresql.org/pub/repos/yum/reporpms/EL-8-x
 RUN dnf -qy module disable postgresql
 RUN dnf -y install mlocate patch vim iproute net-tools bzip2 passwd postgresql12-devel postgresql12 python2
 RUN dnf -y install glibc-locale-source glibc-langpack-zh
-RUN dnf -y install openssl-devel libcurl-devel zlib-devel
+RUN dnf -y install openssl-devel libcurl-devel zlib-devel pcre-devel
 
 RUN dnf -y install git gcc-c++ gdb make automake autoconf cmake cifs-utils diffutils
 RUN dnf -y install python2-devel
