@@ -29,15 +29,6 @@ RUN ssh-keygen -A
 RUN sed -i -r 's/^(.*pam_nologin.so)/#\1/' /etc/pam.d/sshd
 RUN systemctl enable sshd.service
 
-RUN curl -L -OJ https://github.com/ninja-build/ninja/releases/download/v1.9.0/ninja-linux.zip
-RUN curl  -L -OJ https://chrome-infra-packages.appspot.com/dl/gn/gn/linux-amd64/+/latest
-RUN unzip ninja-linux.zip
-RUN unzip gn-linux-amd64.zip
-RUN mv ninja /usr/local/bin/
-RUN mv gn /usr/local/bin/
-RUN rm -rf ninja-linux.zip
-RUN rm -rf gn-linux-amd64.zip
-
 ENV LANG zh_CN.UTF-8
 ENV LC_ALL zh_CN.UTF-8
 
