@@ -12,7 +12,9 @@ rm -f /lib/systemd/system/basic.target.wants/*;\
 rm -f /lib/systemd/system/anaconda.target.wants/*;
 
 RUN dnf -y install openssl openssh-server dnf-utils
-RUN dnf -y install patch vim iproute bzip2 passwd
+RUN dnf -y install https://download.postgresql.org/pub/repos/yum/reporpms/EL-8-x86_64/pgdg-redhat-repo-latest.noarch.rpm
+RUN dnf -qy module disable postgresql
+RUN dnf -y install mlocate patch vim iproute net-tools bzip2 passwd postgresql12 python36 tcpdump unzip lsof psmisc
 RUN dnf -y install glibc-locale-source glibc-langpack-zh
 
 RUN dnf clean all
