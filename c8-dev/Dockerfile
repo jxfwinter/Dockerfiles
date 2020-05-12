@@ -1,15 +1,4 @@
 FROM centos:8
-ENV container docker
-
-RUN (cd /lib/systemd/system/sysinit.target.wants/; for i in *; do [ $i == \
-systemd-tmpfiles-setup.service ] || rm -f $i; done); \
-rm -f /lib/systemd/system/multi-user.target.wants/*;\
-rm -f /etc/systemd/system/*.wants/*;\
-rm -f /lib/systemd/system/local-fs.target.wants/*; \
-rm -f /lib/systemd/system/sockets.target.wants/*udev*; \
-rm -f /lib/systemd/system/sockets.target.wants/*initctl*; \
-rm -f /lib/systemd/system/basic.target.wants/*;\
-rm -f /lib/systemd/system/anaconda.target.wants/*;
 
 RUN dnf -y install openssl openssh-server dnf-utils
 RUN yum-config-manager --enable PowerTools
@@ -43,12 +32,10 @@ echo "export LANG=zh_CN.UTF-8" >> /etc/profile;
 
 RUN echo 'rt20dev88' | passwd --stdin root;\
 ssh-keygen -A;\
-sed -i -r 's/^(.*pam_nologin.so)/#\1/' /etc/pam.d/sshd;\
-systemctl enable sshd.service;
+sed -i -r 's/^(.*pam_nologin.so)/#\1/' /etc/pam.d/sshd;
 
 ENV LANG zh_CN.UTF-8
 ENV LC_ALL zh_CN.UTF-8
 
 EXPOSE 22
-VOLUME [ "/sys/fs/cgroup" ]
-CMD ["/usr/sbin/init"]
+CMD ["/usr/sbin/sshd", "-D"]
