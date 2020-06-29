@@ -1,6 +1,6 @@
-FROM ubuntu:14.04
+FROM ubuntu:19.04
 
-RUN apt-get update && apt-get install -y openssh-server vim net-tools iputils-ping lsb-core sudo python cifs-utils  build-essential
+RUN apt-get update && apt-get install -y openssh-server vim net-tools iputils-ping lsb-core sudo python
 
 RUN echo 'root:rt20dev88' | chpasswd
 
