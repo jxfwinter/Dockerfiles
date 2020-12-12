@@ -15,14 +15,17 @@ RUN yum -y install ninja-build
 #有问题
 #RUN yum -y install nasm 
 
+
+RUN curl -L -OJ https://github.com/Kitware/CMake/releases/download/v3.19.1/cmake-3.19.1-Linux-x86_64.sh
+RUN sh cmake-3.19.1-Linux-x86_64.sh --prefix=/usr/local --exclude-subdir --skip-license
+RUN rm -rf cmake-3.19.1-Linux-x86_64.sh
+
 RUN curl -L -OJ https://chrome-infra-packages.appspot.com/dl/gn/gn/linux-amd64/+/_mqsWgUKYXT-P_QYuuG1J5vH3Vzd6u-Lo5giO0XDmLoC
-RUN curl -L -OJ https://github.com/Kitware/CMake/releases/download/v3.16.5/cmake-3.16.5-Linux-x86_64.sh
-RUN sh cmake-3.16.5-Linux-x86_64.sh --prefix=/usr/local --exclude-subdir --skip-license
 RUN unzip gn-linux-amd64.zip
 RUN mv gn /usr/local/bin/
 RUN rm -rf gn-linux-amd64.zip
 RUN ln -s /usr/bin/ninja-build /usr/local/bin/ninja
-RUN rm -rf cmake-3.16.5-Linux-x86_64.sh
+
 
 RUN yum clean all
 RUN localedef -c -f UTF-8 -i zh_CN zh_CN.utf8
