@@ -1,6 +1,8 @@
 FROM ubuntu:20.04
 
-RUN apt-get update && apt-get install -y openssh-server vim net-tools iputils-ping lsb-core sudo python cifs-utils automake make gcc-10 g++-10 gdb
+RUN apt-get update
+RUN DEBIAN_FRONTEND=noninteractive apt-get install -y tzdata
+RUN apt-get install -y openssh-server vim net-tools iputils-ping lsb-core sudo python cifs-utils automake make gcc-10 g++-10 gdb
 
 RUN curl -L -OJ https://github.com/Kitware/CMake/releases/download/v3.19.1/cmake-3.19.1-Linux-x86_64.sh
 RUN sh cmake-3.19.1-Linux-x86_64.sh --prefix=/usr/local --exclude-subdir --skip-license
