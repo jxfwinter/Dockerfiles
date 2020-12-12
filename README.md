@@ -4,7 +4,7 @@ c/c++开发镜像与centos8基础运行镜像:
 2 可支持容器内挂载windows共享文件夹  
   
 c7-dev目录：  
-centos7系统,包含默认的gcc4.8 gdb版本，详细可查看Dockerfile文件   
+centos7系统,包含默认的gcc4.8 gdb版本，以及devtoolset-9工具集，详细可查看Dockerfile文件   
   
 启动容器命令：  
 docker pull jxfwinter/env:c7-dev  
