@@ -7,7 +7,7 @@ RUN yum -y install openssl openssh-server yum-utils
 RUN yum-config-manager --add-repo http://www.nasm.us/nasm.repo
 
 RUN yum -y install diffutils git unzip kde-l10n-Chinese make automake autoconf openssl-devel libcurl-devel zlib-devel python-devel mlocate patch vim iproute net-tools bzip2 cifs-utils tcpdump lsof psmisc
-RUN yum -y install scl-utils devtoolset-8-gcc-c++ devtoolset-8-gdb 
+RUN yum -y install scl-utils devtoolset-9
 RUN yum -y install gcc-c++ gdb
 RUN yum -y reinstall glibc-common
 RUN yum -y install nasm ninja-build
