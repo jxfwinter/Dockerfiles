@@ -10,7 +10,10 @@ RUN yum -y install diffutils git unzip kde-l10n-Chinese make automake autoconf o
 RUN yum -y install scl-utils devtoolset-9
 RUN yum -y install gcc-c++ gdb
 RUN yum -y reinstall glibc-common
-RUN yum -y install nasm ninja-build
+RUN yum -y install ninja-build
+
+#有问题
+#RUN yum -y install nasm 
 
 RUN curl -L -OJ https://chrome-infra-packages.appspot.com/dl/gn/gn/linux-amd64/+/_mqsWgUKYXT-P_QYuuG1J5vH3Vzd6u-Lo5giO0XDmLoC
 RUN curl -L -OJ https://github.com/Kitware/CMake/releases/download/v3.16.5/cmake-3.16.5-Linux-x86_64.sh
