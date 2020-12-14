@@ -4,16 +4,12 @@ RUN yum -y install epel-release
 RUN yum -y install https://download.postgresql.org/pub/repos/yum/reporpms/EL-7-x86_64/pgdg-redhat-repo-latest.noarch.rpm
 RUN yum -y install centos-release-scl
 RUN yum -y install openssl openssh-server yum-utils
-RUN yum-config-manager --add-repo http://www.nasm.us/nasm.repo
 
 RUN yum -y install diffutils git unzip kde-l10n-Chinese make automake autoconf openssl-devel libcurl-devel zlib-devel python-devel mlocate patch vim iproute net-tools bzip2 cifs-utils tcpdump lsof psmisc
 RUN yum -y install scl-utils devtoolset-9
 RUN yum -y install gcc-c++ gdb
 RUN yum -y reinstall glibc-common
 RUN yum -y install ninja-build
-
-#有问题
-#RUN yum -y install nasm 
 
 
 RUN curl -L -OJ https://github.com/Kitware/CMake/releases/download/v3.19.1/cmake-3.19.1-Linux-x86_64.sh
