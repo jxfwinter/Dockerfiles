@@ -1,4 +1,4 @@
-FROM debian:stable
+FROM debian:buster
 
 RUN apt-get update
 RUN DEBIAN_FRONTEND=noninteractive apt-get install -y tzdata
